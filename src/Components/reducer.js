@@ -62,7 +62,8 @@ export const initialState = {
     price: '9.00',
     rating: '4',
     imageURL: 'https://m.media-amazon.com/images/I/710jnzKlDTL._AC_SY400_.jpg'
-  }]
+  }],
+  user:null
 };
 
 export const reducer = (state, action) => {
@@ -77,6 +78,11 @@ export const reducer = (state, action) => {
         ...state, 
         cartList: state.cartList.filter(item => item.id !== action.payload)
       };
+    case "ADD_USER":
+        return {
+            ...state,
+            user : action.user
+        };
     default:
       return state;
   }

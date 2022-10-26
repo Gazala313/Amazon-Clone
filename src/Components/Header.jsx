@@ -11,8 +11,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 export default function Header() {
     const {myReducer} = useStateValue();
-    const [ data] = myReducer;
-
+    const [ data, user] = myReducer;
+    
   return (
     <header className='header'>
         <div className="header__logo">
@@ -38,11 +38,11 @@ export default function Header() {
         <div className="header__nav">
             <div className="header__nav__user">
                 <span className="header__nav__lineOne">
-                    Hello Guest
+                    Hello {user ? user : "Guest"}
             </span>
             <span className="header__nav__lineTwo">
                 <Link to="/Login">
-                    Sign in
+                    Sign {user ? "Out" : "In"}
                 </Link>
                 </span>
 

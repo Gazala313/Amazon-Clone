@@ -15,6 +15,9 @@ const ShoppingBasket = () => {
     })
   }
 
+  const IncreaseCount =(id)=>{
+    setIncrement(increment + 1)
+  }
   useEffect(()=>{
     if(increment <= 0){
         setIncrement(1);
@@ -36,12 +39,8 @@ const ShoppingBasket = () => {
               <p><strong>${item.price}</strong></p>
               <div><Rating rate={item.rating}/></div>
               <div>
-                <button className='inc' onClick={()=>{
-                    setIncrement(increment - 1);
-                }}>-</button> Qty <span> {increment} </span>
-                <button className='inc' onClick={()=>{
-                    setIncrement(increment + 1);
-                }}>+</button>
+                <button className='inc' onClick={()=> IncreaseCount(item.id)}>-</button> Qty <span> {increment} </span>
+                <button className='inc' onClick={()=>IncreaseCount(item.id)}>+</button>
               </div>
               
               <button onClick={()=>removeFromCart(item.id)}>Remove from Cart</button>
