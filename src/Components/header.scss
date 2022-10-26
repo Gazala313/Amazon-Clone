@@ -1,0 +1,102 @@
+.header{
+    height: 60px;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    color: white;
+    a{
+      text-decoration: none;
+      color: white;
+      display: inline-block;
+      svg, span{
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+    &__logo {
+      display: flex;
+      align-items: center;
+      margin: 0 15px;
+      
+      svg{
+        color: #ff9f00;
+      }
+      img{
+        height: 50px;
+        width: 120px;
+        background-color: black;
+      }
+    }
+    &__logoName{
+      padding-top: 15px;
+      font-size: large;
+      font-weight: bold;
+      color: white;
+      align-items: center;
+      
+    }
+    &__search {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      border-radius: 24px;
+      margin: 0 10px;
+      input{
+        border-start-start-radius: 5px;
+        border-bottom-left-radius: 5px;
+        width: 100%;
+        padding: 10px;
+        border: 0;
+      }
+    }
+    &__searchIcon{
+      border-end-end-radius: 5px;
+      border-top-right-radius: 5px;
+      background-color: #ff9f00;
+      padding: 7.5px;
+      color: black;
+    }
+    &__location{
+      font-size: 15px;
+      font-weight: bold;
+      align-items: left;
+      display: flex;
+      flex-direction: column;
+    }
+    &__nav{
+      display: flex;
+      justify-content: space-evenly;
+      margin: 0 25px;
+      &__itemBasket{
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        color: white;
+      }
+      &__totalCount{
+        color: #ff9f00;
+        
+      }
+
+      &__lineOne{
+        padding-top: 10px;
+        font-size: 10px;
+        font-weight: normal;
+      }
+      &__lineTwo{
+        font-size: 14px;
+      }
+      &__user{
+        display: flex;
+        align-items: center;
+        color: white;
+        margin-right: 20px;
+        flex-direction: column;
+      }
+    }
+  }
