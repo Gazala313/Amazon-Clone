@@ -37,7 +37,8 @@
     .imageHolder{
       padding: 0 10px;
       >img{
-        width: auto;
+        // width: auto;
+        width:100px;
         max-height: 150px;
         object-fit: contain;
       }

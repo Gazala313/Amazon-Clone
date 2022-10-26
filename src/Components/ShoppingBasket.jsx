@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 const ShoppingBasket = () => {
   const { myReducer } = useStateValue();
   const [ data, dispatch ] = myReducer;
-  const [increment,setIncrement] = useState(1);
+  // const [increment,setIncrement] = useState(1);
 
   const removeFromCart = (id) => {
     dispatch({
@@ -15,14 +15,14 @@ const ShoppingBasket = () => {
     })
   }
 
-  const IncreaseCount =(id)=>{
-    setIncrement(increment + 1)
-  }
-  useEffect(()=>{
-    if(increment <= 0){
-        setIncrement(1);
-    }
-  })
+  // const IncreaseCount =(id)=>{
+  //   setIncrement(increment + 1)
+  // }
+  // useEffect(()=>{
+  //   if(increment <= 0){
+  //       setIncrement(1);
+  //   }
+  // })
   
   return(
     <div className="shoppingBasket">
@@ -39,8 +39,8 @@ const ShoppingBasket = () => {
               <p><strong>${item.price}</strong></p>
               <div><Rating rate={item.rating}/></div>
               <div>
-                <button className='inc' onClick={()=> IncreaseCount(item.id)}>-</button> Qty <span> {increment} </span>
-                <button className='inc' onClick={()=>IncreaseCount(item.id)}>+</button>
+                <button className='inc' >-</button> Qty <span> 1 </span>
+                <button className='inc' >+</button>
               </div>
               
               <button onClick={()=>removeFromCart(item.id)}>Remove from Cart</button>
