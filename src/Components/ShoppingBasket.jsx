@@ -1,9 +1,12 @@
 import './shoppingbasket.scss';
 import { useStateValue } from './StateProvider';
 import Rating from './Rating';
+import { useEffect, useState } from 'react';
+
 const ShoppingBasket = () => {
   const { myReducer } = useStateValue();
   const [ data, dispatch ] = myReducer;
+  const [increment,setIncrement] = useState(1);
 
   const removeFromCart = (id) => {
     dispatch({
@@ -11,6 +14,12 @@ const ShoppingBasket = () => {
       payload:id
     })
   }
+
+  useEffect(()=>{
+    if(increment <= 0){
+        setIncrement(1);
+    }
+  })
   
   return(
     <div className="shoppingBasket">
@@ -26,6 +35,15 @@ const ShoppingBasket = () => {
               <div>{item.title}</div>
               <p><strong>${item.price}</strong></p>
               <div><Rating rate={item.rating}/></div>
+              <div>
+                <button className='inc' onClick={()=>{
+                    setIncrement(increment - 1);
+                }}>-</button> Qty <span> {increment} </span>
+                <button className='inc' onClick={()=>{
+                    setIncrement(increment + 1);
+                }}>+</button>
+              </div>
+              
               <button onClick={()=>removeFromCart(item.id)}>Remove from Cart</button>
             </div>
           </li>))

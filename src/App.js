@@ -11,7 +11,7 @@ function App() {
   return (
     
       <Router>
-        <Header/>
+        
         <Routes>
       <Route exact path="/Login" element={
           <React.Fragment>
@@ -20,6 +20,7 @@ function App() {
         }/>
         <Route exact path="/" element ={
           <React.Fragment>
+            <Header/>
             <Banner/>
             <ProductList/>
           </React.Fragment>
@@ -27,6 +28,7 @@ function App() {
         
         <Route exact path="/checkout" element={
           <React.Fragment>
+            <Header/>
             <CheckoutAds/>
             <ShoppingBasket/>
           </React.Fragment>

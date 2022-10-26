@@ -1,7 +1,7 @@
 import { useStateValue } from './StateProvider';
 import Rating from './Rating';
 const Card = (props) => {
-  const { title, price, rating, imageURL } = props;
+  const { title, price, rating, imageURL, Author } = props;
   const { myReducer } = useStateValue();
   const [ , dispatch] = myReducer;
   const addToCard = (selectedValue) => {
@@ -14,7 +14,10 @@ const Card = (props) => {
   }
   return(
     <div className='card'>
-      <p className='title'>{ title }</p>
+        <div className='heading'>
+      <div className='title'>{ title }</div>
+      <p className='Author'>{Author}(Author)</p>
+      </div>
       <p className='price'>${ price }</p>
       <p className='starRating'>{ <Rating rate={rating} /> }</p>
       <div className='imageHolder'>

@@ -1,57 +1,49 @@
 import React from 'react';
 import "./loginpage.scss";
-import {useHistory, Link, auth} from "use-history";
-import { useState } from 'react';
+import { useForm } from "react-hook-form";
+import {Link} from "react-router-dom";
+
 
 export default function LoginPage() {
     // const history = useHistory();
-    const[email,setEmail] = useState("");
-    const[password,setPassword] = useState("");
-
-    const signIn = e => {
-        e.preventDefault();
-
-        // auth
-        //     .signInWithEmailAndPassword(email, password)
-        //     .then(auth => {
-        //         history.push('/')
-        //     })
-        //     .catch(error => alert(error.message))
-    }
-    const register = e => {
-        e.preventDefault();
-
-        // auth
-        //     .createUserWithEmailAndPassword(email, password)
-        //     .then((auth) => {
-        //         // it successfully created a new user with email and password
-        //         if (auth) {
-        //             history.push('/')
-        //         }
-        //     })
-        //     .catch(error => alert(error.message))
+    const { register, handleSubmit, formState: { errors } } = useForm();
+   
+    const onSubmit=(data)=>{
+      console.log(data);  
     }
 
   return (
     <div className='login'>
-            <Link to='/'>
+         <Link to="/">
                 <img
                     className="login__logo"
                     src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png' 
                 />
-            </Link>
-
+                </Link>
             <div className='login__container'>
                 <h1>Sign-in</h1>
 
-                <form>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                
                     <h5>E-mail</h5>
-                    <input className='input_box' type='text' value={email} onChange={e => setEmail(e.target.value)} />
-
+                    <input className='input_box' type='email' {...register("email",{
+                        require:true,
+                        pattern:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ 
+                    })}/>
+                   
+                    {errors.email && <p style={{color:"red",fontSize:"10px", paddingTop:"0"}}>Please check the Email</p>}
+                    
                     <h5>Password</h5>
-                    <input className='input_box' type='password' value={password} onChange={e => setPassword(e.target.value)} />
-
-                    <button type='submit' onClick={signIn} className='login__signInButton'>Sign In</button>
+                    <input className='input_box' type='password' {...register("password",{
+                        require: true,
+                        pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/
+                    })} />
+                    {errors.password && <p style={{color:"red",fontSize:"10px",paddingTop:"0"}}>Please check the Password</p>}
+                    <button type='submit'>
+                        <Link to="/"> Sign In</Link>
+                        
+                          
+                            </button>
                 </form>
 
                 <p>

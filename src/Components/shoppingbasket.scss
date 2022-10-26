@@ -1,4 +1,5 @@
 .shoppingBasket{
+    font-family: 'PT Serif', serif;
     padding: 0 20px;
     .list{
       list-style: none;
@@ -13,6 +14,7 @@
         }
       }
     }
+    
     .itemDeatils{
       padding: 0 10px;
       button{
@@ -22,10 +24,15 @@
         padding: 5px 10px;
         cursor: pointer;
         margin-top: 10px;
+        border-radius: 5px;
       }
       p{
         margin-bottom: 0;
       }
+      .inc{
+        background-color: #ccc;
+        height: 25px;
+    }
     }
     .imageHolder{
       padding: 0 10px;
