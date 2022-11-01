@@ -1,7 +1,7 @@
 .header{
     font-family: 'League Spartan', sans-serif;
     font-family: 'PT Serif', serif;
-    height: 60px;
+    height: 70px;
     width: 100%; 
     display: flex;
     align-items: center;
@@ -42,6 +42,7 @@
       
     }
     &__search {
+      
       display: flex;
       flex: 1;
       align-items: center;

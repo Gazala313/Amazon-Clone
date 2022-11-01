@@ -35,7 +35,7 @@ export default function Header() {
                 </div>
         <div className="header__search">
             <input />
-            <SearchIcon fontSize="small" className="header__searchIcon"/>
+            <SearchIcon fontSize="large" className="header__searchIcon" style={{height:"45px"}}/>
         </div>
         <div className="header__nav">
             <div className="header__nav__user">
