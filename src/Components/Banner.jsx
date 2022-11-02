@@ -28,7 +28,7 @@ import { useState } from 'react';
 // ];
 
 export default function Banner() {
-  const[toggle,setToggle] = useState(background_Image);
+  // const[toggle,setToggle] = useState(background_Image);
   return (
     <div className='banner'>
 
@@ -42,6 +42,9 @@ export default function Banner() {
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="https://m.media-amazon.com/images/I/8160RuRhSUL._SX3000_.jpg" alt="Third slide" />
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://m.media-amazon.com/images/I/617Wo3jP3fL._SX3000_.jpg" alt="Third slide" />
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
