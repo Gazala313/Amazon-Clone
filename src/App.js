@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Banner from "./Components/Banner";
 import CheckoutAds from "./Components/CheckoutAds";
+import Footer from "./Components/Footer";
 import Header from './Components/Header';
 import LoginPage from "./Components/LoginPage";
 import ProductList from "./Components/ProductList";
@@ -23,6 +24,7 @@ function App() {
             <Header/>
             <Banner/>
             <ProductList/>
+            <Footer/>
           </React.Fragment>
         }/>
         
@@ -31,6 +33,7 @@ function App() {
             <Header/>
             <CheckoutAds/>
             <ShoppingBasket/>
+            <Footer/>
           </React.Fragment>
         }/>
       </Routes>
